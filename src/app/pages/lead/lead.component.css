@@ -1,0 +1,124 @@
+
+.custom-tab-group {
+  margin: 20px 0;
+}
+
+.mat-tab-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+}
+
+.mat-tab-label.mat-tab-label-active {
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
+}
+
+.mat-ink-bar {
+  display: none; /* Remove a barra inferior padrão */
+}
+
+.mat-tab-body {
+  padding: 16px;
+}
+
+.lead-card {
+  margin-bottom: 20px;
+}
+
+mat-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+mat-card-header .avatar {
+  background-color: #ff9800;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+mat-card-content p {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+mat-card-actions .price {
+  font-weight: bold;
+  color: #ff9800;
+  font-size: 16px;
+}
+
+.custom-button {
+  font-weight: bold !important;
+  background-color: #ff9800 !important;
+  color: white !important;
+}
+
+.custom-button2 {
+  font-weight: bold !important;
+  background-color: #cecece !important;
+  color: black !important;
+  cursor: pointer !important;
+}
+
+.custom-actions {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 8px; 
+}
+
+.linha-cinza {
+  border: none;
+  border-top: 1px solid #cccccc; 
+  margin: 10px 0;
+}
+
+::ng-deep .mat-mdc-tab-group .mat-mdc-tab-indicator {
+  background-color: #ff9800 !important;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label{
+  color: #ff9800 !important;
+}
+
+::ng-deep  .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: #ff9800 !important;
+}
+
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}

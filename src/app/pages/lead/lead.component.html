@@ -1,0 +1,64 @@
+<div>
+  <mat-card>
+    <mat-card-content>
+      <mat-tab-group  class="custom-tab-group" (selectedIndexChange)="onTabChange($event)">
+        <mat-tab label="Invited">
+          <div *ngFor="let lead of listInvited; trackBy: trackById" class="lead-card">
+            <mat-card>
+              <mat-card-header>
+                <div mat-card-avatar class="avatar">{{ lead.firstName?.charAt(0) }}</div>
+                <mat-card-title>{{ lead.firstName }}</mat-card-title>
+                <mat-card-subtitle>
+                  {{ lead.createDate | date: 'MMMM d yyyy @ h:mm a' }}
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  <mat-icon>place</mat-icon> {{ lead.suburb }}
+                  <mat-icon>work</mat-icon> {{ lead.job }}
+                  <span>Job ID: {{ lead.jobId }}</span>
+                </p>
+                <p>{{ lead.description }}</p>
+              </mat-card-content>
+              <mat-card-actions class="custom-actions">
+                <button mat-raised-button class=".custom-button" (click)="confirmAccept(lead)">Accept</button>
+                <button mat-raised-button class=".custom-button2" (click)="confirmDecline(lead)">Decline</button>
+                <span class="price">{{ lead.price | currency }}</span> Lead Invitation
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </mat-tab>
+        <mat-tab label="Acceted"> 
+          <div *ngFor="let lead of listAccepted; trackBy: trackById" class="lead-card">
+            <mat-card>
+              <mat-card-header>
+                <div mat-card-avatar class="avatar">{{ lead.firstName?.charAt(0) }}</div>
+                <mat-card-title>{{ lead.fullName }}</mat-card-title>
+                <mat-card-subtitle>
+                  {{ lead.createDate | date: 'MMMM d yyyy @ h:mm a' }}
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  <mat-icon>place</mat-icon> {{ lead.suburb }}
+                  <mat-icon>work</mat-icon> {{ lead.job }}
+                  <span>Job ID: {{ lead.jobId }}</span>
+                  <span class="price">{{ lead.price | currency }}</span> Lead Invitation
+                </p>
+                <p>
+                  <mat-icon>phone</mat-icon> {{ lead.phoneNumber }}
+                  <mat-icon>email</mat-icon> {{ lead.email }}
+                </p>
+                <p>{{ lead.description }}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- <div *ngIf="isLoading | async" class="loading-overlay">
+  <mat-spinner></mat-spinner>
+</div> -->
